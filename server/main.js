@@ -1,5 +1,3 @@
-import {Meteor} from 'meteor/meteor';
-
 Meteor.startup(async () => {
   const admin = Accounts.findUserByUsername('admin');
   const {ADMIN_PASSWORD = 'admin'} = process.env;
