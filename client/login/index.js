@@ -24,13 +24,13 @@ class Login extends Component {
               type="text"
               placeholder="Login"
               value={this.state.login}
-              onChange={login => this.setState({login})}
+              onChange={({target: {value}}) => this.setState({login: value})}
             />
             <input
               type="password"
               placeholder="Password"
               value={this.state.password}
-              onChange={password => this.setState({password})}
+              onChange={({target: {value}}) => this.setState({password: value})}
             />
             <button type="submit">Login</button>
           </form>
