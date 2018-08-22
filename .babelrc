@@ -1,0 +1,22 @@
+{
+  "ignore": ["node_modules/**"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [ "./" ],
+        "alias": {
+          "enums": "./imports/enums"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["react-app"],
+      "plugins": [
+        "transform-runtime"
+      ]
+    }
+  }
+}
