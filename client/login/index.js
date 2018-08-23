@@ -12,10 +12,12 @@ class Login extends Component {
 
   login = (e) => {
     e.preventDefault();
-    Meteor.loginWithPassword(this.state.login, this.state.password);
+    const {login, password} = this.state;
+    Meteor.loginWithPassword(login, password);
   };
 
   render() {
+    const {login, password} = this.state;
     return (
       <div className="login">
         <div className="login-form">
@@ -23,13 +25,13 @@ class Login extends Component {
             <input
               type="text"
               placeholder="Login"
-              value={this.state.login}
+              value={login}
               onChange={({target: {value}}) => this.setState({login: value})}
             />
             <input
               type="password"
               placeholder="Password"
-              value={this.state.password}
+              value={password}
               onChange={({target: {value}}) => this.setState({password: value})}
             />
             <button type="submit">Login</button>
